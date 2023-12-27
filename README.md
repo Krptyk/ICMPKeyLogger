@@ -17,23 +17,7 @@ ICMP KeyLogger is a tool designed to capture and transmit keystrokes over the ne
 - pynput
 - scapy
 
-## Installation
-
-### Windows
-- **Npcap Installation** (Silent Install):
-  ```powershell
-  # Set download URL and installer name
-  $downloadUrl = "https://nmap.org/npcap/dist/npcap-<version>.exe"
-  $installerName = "npcap-<version>.exe"
-
-  # Download the installer
-  Invoke-WebRequest -Uri $downloadUrl -OutFile $installerName
-
-  # Install Npcap silently
-  Start-Process -FilePath .\$installerName -ArgumentList "/S" -Wait -NoNewWindow
-Replace <version> with the desired version of Npcap.
-
-Usage
+## Usage
 Identifying Network Interface on Windows
 
 To find the full name of the network interface:
