@@ -6,7 +6,7 @@ ICMP KeyLogger is a basic tool written in python designed to capture and transmi
 
 ### TODO
 - Implement encryption for keystroke data.
-- Group packets to optimize network traffic instead of sending keystrokes instantly.
+- Group packets instead of sending keystrokes instantly.
 
 ## Requirements
 ### Windows
