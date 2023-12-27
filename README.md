@@ -27,6 +27,7 @@ Install Python dependencies using pip:
 To find the full name of the network interface:
 
 ```ipconfig /all```
+
 Use the Description field of the relevant interface.
 
 ### Running the Beacon
