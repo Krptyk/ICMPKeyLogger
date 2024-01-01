@@ -4,6 +4,8 @@
 ## Introduction
 ICMP KeyLogger is a basic tool written in python designed to capture and transmit keystrokes over the network using ICMP packets. It is divided into two main components: the Beacon, which captures keystrokes and sends them, and the Server, which receives and logs these keystrokes.
 
+This project is inspired from: https://github.com/krabelize/icmpdoor
+
 ### TODO
 - Implement encryption for keystroke data.
 - Group packets instead of sending keystrokes instantly.
